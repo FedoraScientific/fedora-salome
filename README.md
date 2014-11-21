@@ -10,7 +10,7 @@ Initial setup:
 Layout:
 -------
 
-* Each salome-<name> directory contains a spec file and a clone of the
+* Each `salome-<name>` directory contains a spec file and a clone of the
   respective source tree.
 * The clone of the source tree contains two branches, `master` and `fedora`.
   The `fedora` branch carries all the patches needed for the fedora package
@@ -25,7 +25,7 @@ Workflow:
     cd salome-<name>/<name>
     ../../salome_gensources.sh <tag>
     ```
-  Tag is i.e. 7_5_0b1. This script will generate a tarball for the specified
+  Tag is i.e. `7_5_0b1`. This script will generate a tarball for the specified
   tag, rebase the commits in the `fedora` branch and generate the patches.
   Patches and tarball are created in the directory above the source tree.
 
