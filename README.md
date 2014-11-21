@@ -4,7 +4,7 @@ Salome Fedora Packaging
 Initial setup:
 --------------
 ```
-    git clone --recursive git@github.com:fedora-salome/fedora-packages.git
+    git clone --recursive git@github.com:fedora-scientific/fedora-salome.git
 ```
 
 Layout:
@@ -38,7 +38,7 @@ Workflow:
 
     # Create github repo on github.com called salome-<name>
     git remote rename origin upstream
-    git remote add origin git@github.com:fedora-salome/salome-<name>.git
+    git remote add origin git@github.com:fedora-scientific/salome-<name>.git
 
     git checkout -b fedora /V<tag>
     # Fedora specific patching
