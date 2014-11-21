@@ -1,0 +1,43 @@
+%define salome_prep() \
+# Replace all occurences of bin/salome with libexec/salome, easier done here than with a patch \
+find . -type f -exec sed -i 's|bin/salome|libexec/salome|g' {} \\; \
+\
+# Fix python shebangs \
+find -name '*.py' -exec sed -i '1s|^#!.*python|#!%{__python2}|' {} \\; \
+\
+# Fix spurious-executable-perm \
+find . -type f -and -executable -exec chmod -x {} \\; \
+\
+# Fix FSF addresses \
+find . -type f -exec sed -i 's|59 Temple Place, Suite 330, Boston, MA  02111-1307|51 Franklin Street, Fifth Floor, Boston, MA  02110-1301|g' {} \\;
+
+
+%define salome_install() \
+# PYTHONPATH and LD_LIBRARY_PATH to have sphinx find the modules \
+export PYTHONPATH=%{buildroot}%{python_sitelib}/salome:%{buildroot}%{python_sitearch}/salome:%{buildroot}%{_libexecdir}/salome \
+export LD_LIBRARY_PATH=%{buildroot}%{_libdir}/salome \
+%make_install -C build \
+\
+# Don't install deprecated build scripts (paths there were not patched) \
+rm -rf %{buildroot}%{_datadir}/salome/adm/unix \
+rm -rf %{buildroot}%{_datadir}/salome/adm/cmake_files/deprecated \
+\
+# Fix script-without-shebang \
+find %{buildroot} \\( -name "*.py" -or -name "*.sh" \\) -and -type f -and -executable -exec chmod -x {} \\; \
+\
+# Make scripts with shebang executable \
+for file in `find "%{buildroot}" -type f -not -path "%{buildroot}%{_defaultdocdir}/*" -exec grep -Il . {} \\;`; do \
+	[[ `head -1 $file` == '#!'* ]] && chmod +x $file \
+done \
+\
+# Delete .buildinfo files \
+find %{buildroot}%{_defaultdocdir}/salome/ -type f -name .buildinfo -exec rm {} \\; || : \
+\
+# Delete .doctrees folders \
+find %{buildroot}%{_defaultdocdir}/salome/ -type d -name .doctrees -exec rm -rf {} \\; || : \
+\
+# Environment file for module \
+if [ ! -z %{1} ]; then \
+    install -dm 0755 %{buildroot}%{_datadir}/salome/env \
+    echo "export %{1}_ROOT_DIR=%{_prefix}" > %{buildroot}%{_datadir}/salome/env/%{name}.env \
+fi

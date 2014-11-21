@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=runSalome
+Name=Salome
+GenericName=Numerical simulation platform
+Icon=salome
+Terminal=false
+Categories=Science;
