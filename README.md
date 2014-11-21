@@ -3,7 +3,9 @@ Salome Fedora Packaging
 
 Initial setup:
 --------------
-
+```
+    git clone --recursive git@github.com:fedora-salome/fedora-packages.git
+```
 
 Layout:
 -------
@@ -19,35 +21,35 @@ Workflow:
 ---------
 
 * Updating an existing module/plugin
-
+    ```
     cd salome-<name>/<name>
     ../../salome_gensources.sh <tag>
-    
+    ```
   Tag is i.e. 7_5_0b1. This script will generate a tarball for the specified
   tag, rebase the commits in the `fedora` branch and generate the patches.
   Patches and tarball are created in the directory above the source tree.
 
 * Adding a new module
-
+    ```
     mkdir salome-<name>
     cd salome-<name>
     git clone http://git.salome-platform.org/gitpub/modules/<name>.git
     cd <name>
-    
+
     # Create github repo on github.com called salome-<name>
     git remote rename origin upstream
     git remote add origin git@github.com:fedora-salome/salome-<name>.git
-    
+
     git checkout -b fedora /V<tag>
     # Fedora specific patching
-    
+
     git push -u origin master
     git push -u origin fedora
-
+    ```
 * Adding a new plugin: similar as for module, but clone as
-
+    ```
     git clone http://git.salome-platform.org/gitpub/plugins/<name>.git
-    
+    ```
   and use `salome-<module>-plugin-<name>` as github repo name.
 
 Status:
@@ -90,10 +92,11 @@ Status:
 * salome-yacs:
     - 7.5.0b1 not built
     - 7.4.1 appeared to work, build complained about
-
+    ```
     /builddir/build/BUILD/YACS_SRC_7.4.0rc1/doc/yacsgen.rst:1493: WARNING: autodoc: failed to import module u'module_generator'; the following exception was raised:
     Traceback (most recent call last):
       File "/usr/lib/python2.7/site-packages/sphinx/ext/autodoc.py", line 335, in import_object
         __import__(self.modname)
     ImportError: No module named module_generator
+    ```
  
