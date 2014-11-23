@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-if [ ! -d .git ]; then
+if [ ! -e .git ]; then
 	echo "Execute this from within a git clone"
 	exit 1
 fi
