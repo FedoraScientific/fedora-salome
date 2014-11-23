@@ -5,6 +5,8 @@ Initial setup:
 --------------
 ```
     git clone --recursive git@github.com:fedora-scientific/fedora-salome.git
+    cd fedora-salome
+    ./add-upstream-origins.sh
 ```
 
 Layout:
