@@ -1,39 +1,39 @@
 [submodule "salome-kernel/kernel"]
 	path = salome-kernel/kernel
-	url = git@github.com:fedora-scientific/salome-kernel.git
+	url = git@github.com:FedoraScientific/salome-kernel.git
 [submodule "salome-geom/geom"]
 	path = salome-geom/geom
-	url = git@github.com:fedora-scientific/salome-geom.git
+	url = git@github.com:FedoraScientific/salome-geom.git
 [submodule "salome-gui/gui"]
 	path = salome-gui/gui
-	url = git@github.com:fedora-scientific/salome-gui.git
+	url = git@github.com:FedoraScientific/salome-gui.git
 [submodule "salome-hexablock/hexablock"]
 	path = salome-hexablock/hexablock
-	url = git@github.com:fedora-scientific/salome-hexablock.git
+	url = git@github.com:FedoraScientific/salome-hexablock.git
 [submodule "salome-homard/homard"]
 	path = salome-homard/homard
-	url = git@github.com:fedora-scientific/salome-homard.git
+	url = git@github.com:FedoraScientific/salome-homard.git
 [submodule "salome-jobmanager/jobmanager"]
 	path = salome-jobmanager/jobmanager
-	url = git@github.com:fedora-scientific/salome-jobmanager.git
+	url = git@github.com:FedoraScientific/salome-jobmanager.git
 [submodule "salome-med/med"]
 	path = salome-med/med
-	url = git@github.com:fedora-scientific/salome-med.git
+	url = git@github.com:FedoraScientific/salome-med.git
 [submodule "salome-paravis/paravis"]
 	path = salome-paravis/paravis
-	url = git@github.com:fedora-scientific/salome-paravis.git
+	url = git@github.com:FedoraScientific/salome-paravis.git
 [submodule "salome-smesh/smesh"]
 	path = salome-smesh/smesh
-	url = git@github.com:fedora-scientific/salome-smesh.git
+	url = git@github.com:FedoraScientific/salome-smesh.git
 [submodule "salome-yacs/yacs"]
 	path = salome-yacs/yacs
-	url = git@github.com:fedora-scientific/salome-yacs.git
+	url = git@github.com:FedoraScientific/salome-yacs.git
 [submodule "salome-smesh-plugin-hexablock/hexablockplugin"]
 	path = salome-smesh-plugin-hexablock/hexablockplugin
-	url = git@github.com:fedora-scientific/salome-smesh-plugin-hexablock.git
+	url = git@github.com:FedoraScientific/salome-smesh-plugin-hexablock.git
 [submodule "salome-smesh-plugin-hexotic/hexoticplugin"]
 	path = salome-smesh-plugin-hexotic/hexoticplugin
-	url = git@github.com:fedora-scientific/salome-smesh-plugin-hexotic.git
+	url = git@github.com:FedoraScientific/salome-smesh-plugin-hexotic.git
 [submodule "salome-smesh-plugin-netgen/netgenplugin"]
 	path = salome-smesh-plugin-netgen/netgenplugin
-	url = git@github.com:fedora-scientific/salome-smesh-plugin-netgen
+	url = git@github.com:FedoraScientific/salome-smesh-plugin-netgen
