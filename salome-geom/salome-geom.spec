@@ -101,8 +101,7 @@ cd build
 	-DKERNEL_ROOT_DIR=%{_prefix} \
 	-DGUI_ROOT_DIR=%{_prefix} \
 	-DCMAKE_MODULE_PATH=%{_datadir}/salome/adm/cmake_files  ..
-make
-#%{?_smp_mflags}
+make %{?_smp_mflags}
 
 
 %install
