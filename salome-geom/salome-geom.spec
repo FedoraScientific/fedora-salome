@@ -49,6 +49,7 @@ BuildRequires: pugixml-devel
 BuildRequires: python-devel
 BuildRequires: python-sphinx
 BuildRequires: qt-devel
+BuildRequires: qtwebkit-devel
 BuildRequires: qwt-devel
 BuildRequires: salome-kernel-devel
 BuildRequires: salome-gui-devel
