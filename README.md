@@ -37,11 +37,13 @@ Workflow:
     git checkout master
     git fetch upstream
     git merge upstream/master
+    git push
     git checkout fedora_<tag>
     git checkout -b fedora_<newtag>
     git rebase tags/V<newtag>
     git push -u origin fedora_<newtag>
     ```
+    `<tag>` is the previous tag before `<newtag>`, i.e. `7_5_0b1 -> 7_5_0rc1`.
 
 * Adding a new module
     ```
