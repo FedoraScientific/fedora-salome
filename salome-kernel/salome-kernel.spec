@@ -1,8 +1,8 @@
-%global pre b1
+%global pre rc1
 
 Name:          salome-kernel
 Version:       7.5.0
-Release:       0.2%{?pre:.%pre}%{dist}
+Release:       0.3%{?pre:.%pre}%{dist}
 Summary:       Salome core (Kernel) module
 
 License:       LGPLv2+
@@ -157,5 +157,5 @@ install -Dpm 0644 COPYING %{buildroot}%{_defaultdocdir}/salome/COPYING
 
 
 %changelog
-* Fri Nov 07 2014 Sandro Mani <manisandro@gmail.com> - 7.5.0-0.2.b1
-- Salome 7.5.0b1
+* Wed Nov 26 2014 Sandro Mani <manisandro@gmail.com> - 7.5.0-0.3.rc1
+- Salome 7.5.0rc1

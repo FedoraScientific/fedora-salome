@@ -16,13 +16,8 @@ module=$(basename $PWD)
 module=${module^^}
 version=$(echo $tag | sed 's|_|.|g')
 
-git checkout master
-git fetch upstream
-git merge upstream/master
-git checkout fedora
-git rebase tags/V$tag
+git checkout fedora_$tag
 patches=$(git format-patch tags/V$tag)
-git checkout master
 
 rm -f ../*.patch
 rm -f ../*.tar.gz

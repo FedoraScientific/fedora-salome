@@ -22,7 +22,7 @@ Layout:
 Workflow:
 ---------
 
-* Updating an existing module/plugin
+* Building an existing module/plugin
     ```
     cd salome-<name>/<name>
     ../../salome_gensources.sh <tag>
@@ -30,6 +30,18 @@ Workflow:
   Tag is i.e. `7_5_0b1`. This script will generate a tarball for the specified
   tag, rebase the commits in the `fedora` branch and generate the patches.
   Patches and tarball are created in the directory above the source tree.
+
+* Updating a module/plugin
+    ```
+    cd salome-<name>/<name>
+    git checkout master
+    git fetch upstream
+    git merge upstream/master
+    git checkout fedora_<tag>
+    git checkout -b fedora_<newtag>
+    git rebase tags/V<newtag>
+    git push -u origin fedora_<newtag>
+    ```
 
 * Adding a new module
     ```
@@ -42,11 +54,11 @@ Workflow:
     git remote rename origin upstream
     git remote add origin git@github.com:FedoraScientific/salome-<name>.git
 
-    git checkout -b fedora /V<tag>
+    git checkout -b fedora_<tag> /V<tag>
     # Fedora specific patching
 
     git push -u origin master
-    git push -u origin fedora
+    git push -u origin fedora_<tag>
     ```
 * Adding a new plugin: similar as for module, but clone as
     ```
